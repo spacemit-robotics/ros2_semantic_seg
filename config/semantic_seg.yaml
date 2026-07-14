@@ -1,0 +1,11 @@
+semantic_seg_node:
+  ros__parameters:
+    config_path: ""
+    lazy_load: true
+    image_topic: /camera/image_raw
+    mask_topic: /perception/semantic_segmentation
+    classes_topic: /semantic_seg/classes
+    debug_image_topic: /semantic_seg/debug_image
+    use_camera: true
+    camera_id: 1
+    camera_fps: 30.0
