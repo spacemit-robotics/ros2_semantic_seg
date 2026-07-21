@@ -2,21 +2,21 @@ module: middleware/ros2/perception/semantic_seg
 tests:
   - name: semantic-seg-source-contract
     description: Validate current VisionService API and required default topics.
-    category: unit
+    category: functional
     scopes: [pr]
-    command: python3 middleware/ros2/perception/semantic_seg/tests/test_source_contract.py
+    command: python3 tests/test_source_contract.py
   - name: semantic-seg-functional
     description: Publish an image and verify mask, class-count, and debug outputs on a ROS 2 dev board.
     category: functional
     scopes: [pr]
     timeout_s: 180
-    command: bash middleware/ros2/perception/semantic_seg/tests/test_functional.sh
+    command: bash tests/test_functional.sh
   - name: semantic-seg-invalid-input
     description: Reject malformed model configuration on a ROS 2 dev board.
     category: functional
     scopes: [pr]
     timeout_s: 60
-    command: bash middleware/ros2/perception/semantic_seg/tests/test_invalid_input.sh
+    command: bash tests/test_invalid_input.sh
   - name: semantic-seg-performance
     description: Measure PP-LiteSeg initialization and first mask latency on a dev board.
     category: performance
@@ -24,4 +24,4 @@ tests:
     timeout_s: 300
     artifacts:
       - perception_perf_semantic_seg.txt
-    command: bash middleware/ros2/perception/semantic_seg/tests/test_performance.sh
+    command: bash tests/test_performance.sh
